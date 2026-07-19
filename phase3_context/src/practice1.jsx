@@ -6,6 +6,11 @@ function Practice1(){
 	    
 		<h1>practice 1</h1>
 		<p>Hello! {name}</p>
+
+		<p>Easy Trick to Remember<br/>
+		Props → Parent sends data to one child.<br/>
+		useContext → One Provider shares data with many components.
+		</p>
 	</>
 };
 

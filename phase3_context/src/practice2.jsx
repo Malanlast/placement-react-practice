@@ -6,6 +6,10 @@ function Practice2(){
 		<>
 			<h1>Practice 2</h1>
 			<p>Hello! {name}</p>
+
+			<p>Interview Definition<br/>
+            useContext is a React Hook used to access shared data from a Context without passing props through every intermediate component (avoiding prop drilling).
+			</p>
 		</>
 	)
 };
