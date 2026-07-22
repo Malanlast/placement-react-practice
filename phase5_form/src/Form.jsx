@@ -92,7 +92,20 @@ import { useState } from "react"
 				 <p>Gender: {gender}</p>
 				<button>submit</button>
 			</form>
-			
+			<span>
+			<h1>Interview Questions</h1>
+				<h2>Controlled vs Uncontrolled Component</h2>
+				<h3>Controlled</h3>
+				<ul>
+					<li>Uses- useState</li>
+					<li>React controls the input value</li>
+				</ul> 
+				<h3>Uncontrolled</h3>
+				<ul>
+					<li>Uses-useRef</li>
+					<li>The DOM controls the value</li>
+				</ul>
+			</span>
 		</>
 	)
 }
