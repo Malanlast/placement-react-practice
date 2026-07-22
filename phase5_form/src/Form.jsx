@@ -9,6 +9,7 @@ import { useState } from "react"
 	});
 	const[agree,setAgree]=useState(false);
     const[city, setCity]=useState("");
+	const[gender, setGender]=useState("");
 	function handleChange(e){
 		setForm({
 			...form,
@@ -34,7 +35,7 @@ import { useState } from "react"
 			<h1>Form</h1>
 
 			<form onSubmit={handleSubmit} >
-
+                 {/* name,email,password */}
 				 <input 
 				    type="text"
 					name="name"
@@ -58,7 +59,7 @@ import { useState } from "react"
 					value={form.password}
 					onChange={handleChange}
 				 /><br/><br/>
-
+                  {/* select option */}
 				 <select
 					value={city}
 					onChange={(e)=>setCity(e.target.value)}
@@ -69,13 +70,26 @@ import { useState } from "react"
 				 <option value="Rajsthan">Rajsthan</option>
 				 </select>
 					<p>Selected city: {city}</p>
-				 <br/>
-
+                   {/* checkbox */}
 				 <input
 					type="checkbox"
 					checked={agree}
 					onChange={(e)=>setAgree(e.target.checked)}
 				 /><br/>
+				 {/* radio */}
+				 <input 
+					type="radio"
+                    value="Male"
+					checked={gender==="Male"}
+                     onChange={(e)=>setGender(e.target.value)}
+				 />
+				 <input
+					type="radio"
+					value="Female"
+					checked={gender==="Female"}
+					onChange={(e)=>setGender(e.target.value)}
+				 /><br/>
+				 <p>Gender: {gender}</p>
 				<button>submit</button>
 			</form>
 			
