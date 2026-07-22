@@ -1,10 +1,11 @@
- import './App.css'
+import Form from "./Form.jsx";
+import './App.css'
 
 function App() {
    
   return (
     <>
-      <h1>Form</h1>
+     <Form/>
     </>
   )
 }
