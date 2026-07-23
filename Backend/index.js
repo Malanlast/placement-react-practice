@@ -24,7 +24,14 @@ app.get("/shio",(req,res)=>{
 });
 
 app.get("/user/:id",(req,res)=>{
-	res.send(req.params.id);
+	res.json({
+		params:req.params,
+		query:req.query,
+	})
+});
+
+app.get("/search",(req,res)=>{
+	res.send(req.query);
 });
 
 app.listen(3000,()=>{
