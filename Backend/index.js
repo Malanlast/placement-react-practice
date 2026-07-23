@@ -10,6 +10,9 @@
 
 const express=require("express");
 const app=express();
+const logger=require("./middleware.js");
+
+//app.use(logger);
 
 app.get("/",(Req,res)=>{
 	res.send("welcome to home page");
@@ -23,14 +26,14 @@ app.get("/shio",(req,res)=>{
 	res.send("Hi! Shio");
 });
 
-app.get("/user/:id",(req,res)=>{
+app.get("/user/:id",logger,(req,res)=>{
 	res.json({
 		params:req.params,
 		query:req.query,
 	})
 });
 
-app.get("/search",(req,res)=>{
+app.get("/search",logger,(req,res)=>{
 	res.send(req.query);
 });
 
