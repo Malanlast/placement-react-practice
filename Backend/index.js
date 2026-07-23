@@ -12,6 +12,11 @@ const express=require("express");
 const app=express();
 const logger=require("./middleware.js");
 
+let users=[
+	{id:1, name:"shio"},
+	{id:2, name:"alia"},
+];
+
 //app.use(logger);
 
 app.get("/",(Req,res)=>{
@@ -35,6 +40,19 @@ app.get("/user/:id",logger,(req,res)=>{
 
 app.get("/search",logger,(req,res)=>{
 	res.send(req.query);
+});
+
+//grt data
+app.get("/users",(req,res)=>{
+	res.send(users);
+});
+
+//post data
+app.post("/users",(req,res)=>{
+	users.push(req.body);
+	res.json({
+		message:"user added",
+	});
 });
 
 app.listen(3000,()=>{
