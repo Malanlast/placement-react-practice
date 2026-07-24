@@ -10,7 +10,7 @@
 
 const express=require("express");
 const app=express();
-const logger=require("./middleware.js");
+const logger=require("../middleware.js");
 
 let users=[
 	{id:1, name:"shio"},
