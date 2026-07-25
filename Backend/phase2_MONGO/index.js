@@ -38,6 +38,18 @@ app.get("/student",async(req,res)=>{
 		})
 	}
 });
+//read one
+app.get("/student/:id",async(req,res)=>{
+	try{
+		const student=await Student.findById(req.params.id);
+		res.json(student);
+	}
+	catch(err){
+		res.status(500).json({
+			message:err.message
+		})
+	}
+});
 
 app.listen(3000,(req,res)=>{
     console.log(`server running on port ${process.env.PORT}`);
