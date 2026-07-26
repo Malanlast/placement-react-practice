@@ -91,7 +91,11 @@ function App() {
       />
 
       <div> 
-        {students.map((student)=>(
+        {students
+        .filter((student)=>
+        student.name.toLowerCase().includes(search.toLowerCase())
+        )
+        .map((student)=>(
           <div style={{background:"pink"}} key={student._id}>
             <h3 style={{background:"blue", color:"white"}}>name: {student.name}</h3>
             <h3>age: {student.age}</h3>
