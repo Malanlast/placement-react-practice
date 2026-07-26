@@ -1,10 +1,14 @@
 const express=require("express");
 const app=express();
 require("dotenv").config();
-app.use(express.json());
+const cors=require("cors");
 const mongoose=require("mongoose");
 const Student=require("./models/student.js");
 
+app.use(cors({
+	origin:"http://localhost:5173"
+}));
+app.use(express.json());
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log("MongoDB connected.."))
 .catch(err=>console.log("DB error: " +err));
