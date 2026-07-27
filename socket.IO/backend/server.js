@@ -11,4 +11,14 @@ const io=new Server(server,{
 	}
 });
 
+io.on("connection",(socket)=>{
+	console.log("user connected");
+	console.log(socket.id);
+});
+
+server.listen(5000,()=>{
+	console.log("server running on port 5000");
+});
+
+
  
