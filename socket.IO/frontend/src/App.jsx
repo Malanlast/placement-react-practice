@@ -4,7 +4,7 @@ import socket from "./socket.js";
 function App() {
   const[message, setMessage]=useState("");
   const[messages, setMessages]=useState([]);
-   
+  const[name, setName]=useState("");
   useEffect(()=>{
     socket.on("message",(msg)=>{
       setMessages((prevMsg)=>[...prevMsg,msg]);
@@ -17,14 +17,23 @@ function App() {
   },[]);
 
   function sendMessage(){
-    socket.emit("message",message);
-    setMessages((prevMsg)=>[...prevMsg,message]);//store sender message
+    const data={
+      name,
+      message
+    }
+    socket.emit("message",data);
+    setMessages((prevMsg)=>[...prevMsg,data]);//store sender message
     setMessage("");
   }
   return (
     <>
       <h1>Socket.IO</h1>
-      <input/>
+      <input
+        type="text"
+        placeholder="name"
+        value={name}
+        onChange={(e)=>setName(e.target.value)}
+      />
       <br/>
       <input
         type="text"
@@ -36,7 +45,7 @@ function App() {
       <hr/>
       {
         messages.map((msg,idx)=>(
-          <p key={idx}>{msg}</p>
+          <p key={idx}><strong>{msg.name} :</strong>{msg.message}</p>
         ))
       }
     </>
