@@ -13,7 +13,11 @@ const io=new Server(server,{
 
 io.on("connection",(socket)=>{
 	console.log("user connected");
-	console.log(socket.id);
+	//console.log(socket.id);
+	socket.on("message",(msg)=>{
+		console.log(msg);
+		socket.broadcast.emit("message",msg);
+	});
 });
 
 server.listen(5000,()=>{
