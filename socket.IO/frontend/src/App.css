@@ -1,1 +1,21 @@
- 
+ .my-message{
+	 
+	background-color:lightGreen;
+	width:fit-content;
+	margin:10px;
+	padding:10px;
+	border:solid 1px;
+	border-radius:7px;
+	margin-left: auto;
+ }
+
+  .other-message{
+	
+	background-color:lightGray;
+	width:fit-content;
+	margin:10px;
+	padding:10px;
+	border:solid 1px;
+	border-radius:7px;
+	margin-right:auto;
+ }

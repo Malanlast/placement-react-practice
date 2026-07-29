@@ -25,6 +25,13 @@ function App() {
     setMessages((prevMsg)=>[...prevMsg,data]);//store sender message
     setMessage("");
   }
+
+  function handleKeyDown(e){
+    if(e.key==="Enter"){
+      sendMessage();
+    }
+  }
+  
   return (
     <>
       <h1>Socket.IO</h1>
@@ -40,12 +47,18 @@ function App() {
         placeholder="message"
         value={message}
         onChange={(e)=>setMessage(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
       <button onClick={sendMessage}>send</button>
       <hr/>
       {
         messages.map((msg,idx)=>(
-          <p key={idx}><strong>{msg.name} :</strong>{msg.message}</p>
+          <p
+           className={name===msg.name?"my-message":"other-message"}
+           key={idx}>
+          <strong>{msg.name}</strong><br/>
+          {msg.message}
+          </p>
         ))
       }
     </>
