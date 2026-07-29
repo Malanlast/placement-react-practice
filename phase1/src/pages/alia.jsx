@@ -18,7 +18,7 @@ function Alia({work,age,nums,user,greet,children}) {
 			<button onClick={greet}>greet</button>
 
 			{/* passing data back to parent */}
-			<button onClick={()=>greet("Alia")}>gree2</button>
+			<button onClick={()=>greet("Alia")}>greet2</button>
 
              {/* children */}
 			 <p>children</p>

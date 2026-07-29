@@ -19,7 +19,7 @@ let users=[
 
 //app.use(logger);
 
-app.get("/",(Req,res)=>{
+app.get("/",(req,res)=>{
 	res.send("welcome to home page");
 });
 
