@@ -40,12 +40,13 @@ function Hooks() {
 	  <button onClick={()=>setCount(prev=>prev+1)}>
 	  increase
 	  </button><hr/>
-	  {/* add array */}
-	  <p>{array.map((index,arr)=>(
-		<li key={index}>{arr}</li>
-	  ))}
-	  </p>
-	  <button onClick={()=>setArray([...array,50,60])}>add</button><hr/>
+	  {/* add array */} 
+	  <ul>
+	  {array.map((arr,index)=>(
+		<li key={index}>{arr}</li> 
+	  ))} 
+	  </ul>
+	  <button  onClick={()=>setArray([...array,50,60])}>add</button><hr/>
 	  {/* update obj */}
 	  <p>name: {user.name}, age:{user.age}</p>
 	  <button onClick={()=>(setUser({...user,age:33,name:"Alia"}))}>updated</button><hr/>
